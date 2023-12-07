@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: monospace;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)),url(img/background.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.info{
+    padding: 60px 100px;
+    width: 1100px;
+}
+
+.info h1{
+    color: #f2f2f2;
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.info p{
+    color: #f2f2f2;
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 0 5px #010;
+}
+
+header h1{
+    margin-left: 45px;
+    color: rgb(255, 255, 255);
+    flex: 1;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.buscar{
+    flex: 1;
+    position: relative;
+}
+
+.buscar input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    text-align: center;
+    color: gray;
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 40px;
+}
+
+.buscar button{
+    background: rgb(72, 223, 52);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scale(0.9);
+}
+
+header ul{
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header a{
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 10px 15px;
+}
+
+.menu{
+    display: none;
+    font-size: 2.5rem;
+}
+
+header a:hover{
+    color: rgb(23, 199, 199);
+}
+
+header i:hover{
+    transform: scale(1.35);
+}
+
+i{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.inputcheck{
+    display: none;
+}
+
+/* Responsivo */
+
+@media(max-width: 1335px){
+    .buscar button{
+        position: absolute;
+    }
+
+    header ul{
+        position: fixed;
+        top: 100px;
+        right: -100%;
+        background: rgba(0, 0, 0, 0.6);
+        height: calc(100vh - 100px);
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        transition: left 0.5s linear;
+    }
+
+    header .menu{
+        display: block;
+        width: 100px;
+        text-align: center;
+    }
+
+    #chk1:checked ~ ul{
+        right: 0;
+    }
+
+    .inputcheck{
+        display: none;
+    }
+
+    header ul{
+        width: 100%;
+    }
+
+    header ul a{
+        font-size: 25px;
+    }
+
+    .info{
+        position: relative;
+        flex-direction: column;
+        text-align: center;
+        top: 60px;
+    }
+
+    .info p{
+        font-weight: 900;
+        font-size: 1.6rem;
+    }
+}
+
+@media(max-width: 500px){
+    header h1{
+        font-size: 25px;
+        margin-left: 5px;
+    }
+
+    header ul{
+        width: 100%;
+    }
+}
